@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './style/index.css';
 import App from './views/App';
+import '@coreui/coreui/dist/js/coreui.bundle';
+import '@coreui/coreui/dist/css/coreui.min.css';
 // import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
