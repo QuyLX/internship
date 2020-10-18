@@ -1,9 +1,32 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { CButton, CModal, CModalHeader, CModalBody, CModalFooter } from '@coreui/react'
 const HomePage = () => {
-    console.log(process.env.REACT_APP_API_KEY);
+    const [modal, setModal] = useState(false);
+    const toggle = () => {
+        setModal(!modal);
+    }
     return (
         <>
-            Home Page
+            <CButton
+                onClick={toggle}
+                className="mr-1"
+            >Launch demo modal</CButton>
+            <CModal
+                show={modal}
+                onClose={toggle}
+            >
+                <CModalHeader closeButton>Modal title</CModalHeader>
+                <CModalBody>
+                    {process.env.REACT_APP_ENV}
+                </CModalBody>
+                <CModalFooter>
+                    <CButton color="primary">Do Something</CButton>{' '}
+                    <CButton
+                        color="secondary"
+                        onClick={toggle}
+                    >Cancel</CButton>
+                </CModalFooter>
+            </CModal>
         </>
     )
 }

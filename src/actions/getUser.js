@@ -9,6 +9,7 @@ export const loadUserData = () => async dispatch => {
                 inc: 'name,email,picture'
             }
         })
+        
         dispatch({
             type: LOAD_USER,
             payload: res.data

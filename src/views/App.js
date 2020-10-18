@@ -1,10 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
-import NavBar from './components/DefaultLayout/NavBar'
+import NavBar from './components/Default/NavBar'
 import store from '../store.js/store'
 import { Provider } from 'react-redux'
 import routes from '../routes';
-import Footer from './components/DefaultLayout/Footer'
+import Footer from './components/Default/Footer'
 
 const App = () => {
   return (

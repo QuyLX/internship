@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  dev:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      env_file: .env.development
+    ports:
+      - "3000:3000"
+    volumes:
+      - "/app/node_modules"
+      - "./:/app"
+  prod:
+    stdin_open: true
+    build:
+      context: .
+      dockerfile: Dockerfile.prod
+    environment:
+      env_file: .env.production
+    ports:
+      - "3000:3000"
+    volumes:
+      - "/app/node_modules"
+      - "./:/app"
